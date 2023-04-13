@@ -90,18 +90,28 @@ ALTER TABLE ONLY public.players ALTER COLUMN player_id SET DEFAULT nextval('publ
 -- Data for Name: players; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.players VALUES (98, 'mark', 1, 3);
-INSERT INTO public.players VALUES (100, 'user_1681188633671', 2, 224);
-INSERT INTO public.players VALUES (99, 'user_1681188633672', 5, 168);
-INSERT INTO public.players VALUES (102, 'user_1681188804060', 2, 2);
-INSERT INTO public.players VALUES (101, 'user_1681188804061', 5, 76);
+INSERT INTO public.players VALUES (121, 'mark', 1, 4);
+INSERT INTO public.players VALUES (125, 'user_1681396637517', 2, 108);
+INSERT INTO public.players VALUES (124, 'user_1681396637518', 5, 72);
+INSERT INTO public.players VALUES (127, 'user_1681396676349', 2, 243);
+INSERT INTO public.players VALUES (126, 'user_1681396676350', 5, 3);
+INSERT INTO public.players VALUES (129, 'user_1681396705581', 2, 540);
+INSERT INTO public.players VALUES (128, 'user_1681396705582', 5, 2);
+INSERT INTO public.players VALUES (131, 'user_1681396746108', 2, 380);
+INSERT INTO public.players VALUES (130, 'user_1681396746109', 5, 594);
+INSERT INTO public.players VALUES (133, 'user_1681396786013', 2, 138);
+INSERT INTO public.players VALUES (132, 'user_1681396786014', 5, 2);
+INSERT INTO public.players VALUES (135, 'user_1681396808648', 2, 355);
+INSERT INTO public.players VALUES (134, 'user_1681396808649', 5, 425);
+INSERT INTO public.players VALUES (123, 'user_1681396545394', 2, 47);
+INSERT INTO public.players VALUES (122, 'user_1681396545395', 5, 3);
 
 
 --
 -- Name: players_player_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.players_player_id_seq', 102, true);
+SELECT pg_catalog.setval('public.players_player_id_seq', 135, true);
 
 
 --
