@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo -e "\n~~ Number Guess ~~\n"
-
 # connecting the database
 PSQL="psql -X --username=freecodecamp --dbname=number_guess -t --no-align -c"
 
@@ -10,11 +8,19 @@ PSQL="psql -X --username=freecodecamp --dbname=number_guess -t --no-align -c"
 N=$(( RANDOM % 1000 )) # secret number
 echo $N
 
-
 echo "Enter your username:"
 read USERNAME
 
+
+
 GAME_LOGIC() {
+  read GUESS
+
+  if [[ ! $GUESS =~ ^[0-9]*$ ]]
+    then
+      echo -e "\nThat is not an integer, guess again:"
+  fi
+
   while true;
   do
     (( COUNTER++ ))
@@ -30,6 +36,11 @@ GAME_LOGIC() {
     fi
 
     read GUESS
+
+    if [[ ! $GUESS =~ ^[0-9]*$ ]]
+    then
+      echo -e "\nThat is not an integer, guess again:"
+    fi
   done
 
   # update player stats
@@ -51,7 +62,6 @@ then
   INSERT_USERNAME=$($PSQL "INSERT INTO players(username, games_played) VALUES('$USERNAME' , 0);")
 
   echo -e "\nGuess the secret number between 1 and 1000:"
-  read GUESS
 
   GAME_LOGIC
 
@@ -63,10 +73,9 @@ else
   done
 
   echo -e "\nGuess the secret number between 1 and 1000:"
-  read GUESS
+
 
   GAME_LOGIC
 
- 
 fi
 
